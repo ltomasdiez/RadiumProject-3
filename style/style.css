@@ -104,20 +104,17 @@ main{
     display: flex;
 }
 /*sidebar and money-exchange*/
-main #sidebar,main #money-exchange{
+main #sidebar{
     display:none;
 }
-main #sidebar h2,main #money-exchange h2, main #sidebar h3,main #money-exchange h3,
-main #sidebar h4,main #money-exchange h4{
+main #sidebar h2,main #sidebar h3,
+main #sidebar h4{
     margin:0;
     padding: 0;
 }
 main #sidebar img{
     position: relative;
     width: 100%;
-}
-main #money-exchange{
-    background: url(https://images.pexels.com/photos/545064/pexels-photo-545064.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
 }
 .music{
     border-bottom: 3px solid black ;
@@ -219,11 +216,9 @@ footer h3{
         flex:1;
         order:1;
     }
-    main #money-exchange{
-        flex:1;
-    }
     main #section-container{
         flex:7;
+        order: 2;
     }
 }
 
