@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&display=swap');
+/*--------------GLOBAL--------------*/
+body{
+    font-family: 'Roboto Condensed', sans-serif;
+    margin: 0;
+    background: #eee;
+    height: auto;
+}
+header, main{
+    max-width: 900px;
+    margin: auto;
+    box-shadow: 30px 0px 40px rgba(0,0,0,0.1), -30px 0px 40px rgba(0,0,0,0.1);
+}
+button:hover{
+    cursor: pointer;
+}
+a{
+    text-decoration: none;
+    color: #888;
+}
+a:hover{
+    color: black;
+}
+img{
+    display: block;
+    width: 100%;
+
+}
+
+
+/*--------------HEADER AREA--------------*/
+#landing{
+    background: #fff;
+}
+#landing  h1{
+    font-weight: 400;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    margin: 0;
+}
+#landing h2{
+    font-weight: 400;
+    font-size: 1rem;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+#landing #landing-header{
+    display: flex;
+    flex: 0 1 40vw;
+    height: 15vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding:0 1rem;
+    border-bottom: 2px solid black;
+}
+#landing #landing-header #landing-text-inner{
+    flex:19;
+    order:2;
+}
+#landing #landing-header #landing-text-inner h2{
+    color: #888;
+}
+#landing #landing-header #landing-button{
+    flex: 1;
+    order: 1;
+    margin: 0;
+    padding: 0;
+    height: 22px;
+    width: auto;
+    background: url("/image/burgermenu.png");
+    background-repeat: no-repeat;
+    border: none;
+}
+
+/*navigation bar*/
+
+#landing #landing-nav{
+    display: none;
+    width: 100%;
+    background:#fff;
+    height: 5vh;
+    border-bottom: black solid 2px;
+}
+#landing #landing-nav #menu .container-ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#landing #landing-nav #menu ul .box{
+    flex:1;
+    padding:0 0.5rem;
+    margin: 0;
+    font-size: 1rem;
+}
+
+
+
+
+/*--------------MAIN AREA--------------*/
+main{
+    display: flex;
+}
+/*sidebar and money-exchange*/
+main #sidebar,main #money-exchange{
+    display:none;
+}
+main #sidebar h2,main #money-exchange h2, main #sidebar h3,main #money-exchange h3,
+main #sidebar h4,main #money-exchange h4{
+    margin:0;
+    padding: 0;
+}
+main #sidebar img{
+    position: relative;
+    width: 100%;
+}
+main #money-exchange{
+    background: url(https://images.pexels.com/photos/545064/pexels-photo-545064.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+}
+.music{
+    border-bottom: 3px solid black ;
+}
+
+main
+/*section*/
+section{
+    margin: 0;
+    padding: 0;
+}
+section h2, section h3{
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    display: inline-block;
+}
+section h3{
+    font-size: 1rem;
+    color:#888;
+}
+section .title{
+    margin: 25px 2px;
+    border-bottom: 2px solid black;
+    padding-bottom: 10px;
+}
+.btn{
+    padding: 0.5rem 2rem;
+    border: 1px #ccc solid;
+    display: inline-block;
+    margin: .4rem 0 0;
+    border-radius: 50px;
+    text-decoration: none;
+    color: #333;
+    transition: background 1000ms ease;
+}
+.btn:hover{
+    background: grey;
+}
+
+
+/*--------------FOOTER--------------*/
+footer{
+    text-align: center;
+    padding: 2rem 1rem;
+    margin: auto;
+    color: #333;
+}
+
+footer h3{
+    font-size:2em;
+    margin-bottom: 0;
+}
+
+
+
+/* SCREEN SIZES MEDIA QUERIE */
+@media(min-width: 480px){
+    #landing #landing-nav{
+        display: block;
+    }
+}
+@media (min-width: 768px){
+    #articles{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    #articles #box1{
+        display: flex;
+        border-bottom: 2px solid black;
+        justify-content: center;
+        align-items: center;
+    }
+    #articles #box2{
+        display: flex;
+        border-bottom: 2px solid black;
+        justify-content: center;
+        align-items: center;
+    }
+    #articles .title{
+        flex:1;
+        border: none;
+        padding:0 10px;
+    }
+
+}
+@media (min-width: 900px) {
+    main, header{
+        max-width: 1280px;
+    }
+    main{
+        justify-content: center;
+    }
+    main #sidebar, main #money-exchange{
+        display: block;
+    }
+    main #sidebar{
+        flex:1;
+        order:1;
+    }
+    main #money-exchange{
+        flex:1;
+    }
+    main #section-container{
+        flex:7;
+    }
+}
+
+
+
+
+
+/*
+La breakpoints recomendados para media queries son:
+@media (min-width: 480px) {
+@media (min-width: 768px) {
+@media (min-width: 900px) {
+@media (min-width: 1024px) {
+@media (min-width: 1200px) {
+
+    */
