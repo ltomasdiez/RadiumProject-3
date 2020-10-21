@@ -68,7 +68,7 @@ img{
     padding: 0;
     height: 22px;
     width: auto;
-    background: url("/image/burgermenu.png");
+    background: url(../image/burgermenu.png);
     background-repeat: no-repeat;
     border: none;
 }
