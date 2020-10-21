@@ -24,7 +24,6 @@ a:hover{
 img{
     display: block;
     width: 100%;
-
 }
 
 
@@ -207,27 +206,27 @@ footer strong{
 }
 @media (min-width: 900px) {
     main, header{
-        max-width: 1280px;
+        max-width: 1480px;
     }
     main{
+        display: flex;
         justify-content: center;
+        margin: 0;
+        padding: 0;
     }
-    main #sidebar, main #money-exchange{
+    main #sidebar{
         display: block;
     }
     main #sidebar{
         flex:1;
-        order:1;
+        order:2;
     }
     main #section-container{
-        flex:7;
-        order: 2;
+        flex:6;
+        order:1;
+        margin: 1%;
     }
 }
-
-
-
-
 
 /*
 La breakpoints recomendados para media queries son:
