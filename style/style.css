@@ -32,6 +32,7 @@
 @media (min-width: 900px) {
     main, header{
         max-width: 2048px;
+        margin: auto;
     }
     main{
         display: flex;
