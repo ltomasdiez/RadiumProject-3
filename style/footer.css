@@ -1,0 +1,15 @@
+/*--------------FOOTER--------------*/
+footer{
+    text-align: center;
+    padding: 2rem 1rem;
+    margin: auto;
+    color: #333;
+}
+
+footer h3{
+    margin-bottom: 0;
+    font-size:2em;
+}
+footer strong{
+    color:#888;
+}

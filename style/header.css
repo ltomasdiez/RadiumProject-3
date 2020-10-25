@@ -1,0 +1,67 @@
+/*--------------HEADER AREA--------------*/
+#landing{
+    background: #fff;
+}
+#landing  h1{
+    margin: 0;
+    font-weight: 400;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+}
+#landing h2{
+    margin: 0;
+    font-weight: 400;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+#landing #landing-header{
+    display: flex;
+    flex: 0 1 40vw;
+    justify-content: center;
+    align-items: center;
+    padding:0 1rem;
+    border-bottom: 2px solid black;
+    height: 15vh;
+    text-align: center;
+}
+#landing #landing-header #landing-text-inner{
+    flex:19;
+    order:2;
+}
+#landing #landing-header #landing-text-inner h2{
+    color: #888;
+}
+#landing #landing-header #landing-button{
+    flex: 1;
+    order: 1;
+    margin: 0;
+    padding: 0;
+    height: 22px;
+    width: auto;
+    background: url("../image/burgermenu.png");
+    background-repeat: no-repeat;
+    border: none;
+}
+
+/*navigation bar*/
+
+#landing #landing-nav{
+    display: none;
+    width: 100%;
+    height: 5vh;
+    background:#fff;
+    border-bottom: black solid 2px;
+}
+#landing #landing-nav #menu .container-ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+}
+#landing #landing-nav #menu ul .box{
+    flex:1;
+    padding:0 0.5rem;
+    margin: 0;
+    font-size: 1rem;
+}

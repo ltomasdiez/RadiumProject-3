@@ -1,0 +1,55 @@
+/*--------------MAIN AREA--------------*/
+main{
+    display: flex;
+}
+/*sidebar and money-exchange*/
+main #sidebar{
+    display:none;
+}
+main #sidebar h2,main #sidebar h3,
+main #sidebar h4{
+    margin:0;
+    padding: 0;
+}
+main #sidebar img{
+    position: relative;
+    width: 100%;
+}
+.music{
+    border-bottom: 3px solid black ;
+}
+
+main
+/*section*/
+section{
+    margin: 0;
+    padding: 0;
+}
+section h2, section h3{
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+section h3{
+    font-size: 1rem;
+    color:#888;
+}
+section .title{
+    margin: 25px 2px;
+    border-bottom: 2px solid black;
+    padding-bottom: 10px;
+}
+.btn{
+    padding: 0.5rem 2rem;
+    border: 1px #ccc solid;
+    display: inline-block;
+    margin: .4rem 0 0;
+    border-radius: 50px;
+    text-decoration: none;
+    color: #333;
+    transition: background 1000ms ease;
+}
+.btn:hover{
+    background: grey;
+}
