@@ -1,9 +1,11 @@
 const expresiones = {
-    usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
+    direccion: /^[a-zA-Z0-9\s]{4,16}$/, // Letras, numeros y espacio
     nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
-    password: /^.{4,12}$/, // 4 a 12 digitos.
+    password: /^[a-zA-Z0-9]{8,16}$/, // 4 a 12 digitos.
     correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-    telefono: /^\d{7,14}$/ // 7 a 14 numeros.
+    telefono: /^\d{7,14}$/, // 7 a 14 numeros.
+    cp:/^.{3,12}$/,
+    id:/^.\d{6,7}$/,
 }
 const inputs = document.getElementsByTagName('input');
 const name = document.getElementById('name');
@@ -43,9 +45,9 @@ function validateName(){//FALTA CORREGIR EXPRESION
         var pname=document.getElementById('pname');
         if(!expresiones.nombre.test(name.value)){
             pname.className="warning";
-            error[0]='nombre';
+            error[0]='Name';
         }else{
-            error[0]='';
+            error[0]=null;
             realTimeKey(); //FIXING KEYDOWN EVENT
         }
     });
@@ -58,14 +60,13 @@ function validateEmail(){
         var pemail=document.getElementById('pemail');
         if(!expresiones.correo.test(email.value)){
             pemail.className="warning";
-            error[1]='email';
+            error[1]='Email';
         }else{
-            error[1]='';
+            error[1]=null;
         }
     });
     email.addEventListener('focus',function(){
         pemail.className="warning2";
-        error[1]='email';
     })
 }
 function validatePassword(){
@@ -73,9 +74,9 @@ function validatePassword(){
         var ppass=document.getElementById('ppass');
         if(!expresiones.password.test(pass.value)){
             ppass.className="warning";
-            error[2]='password';
+            error[2]='Password';
         }else{
-            error[2]='';
+            error[2]=null;
         }
     });
     pass.addEventListener('focus',function(){
@@ -87,9 +88,9 @@ function validatePassword2(){
         var ppass2=document.getElementById('ppass2');
         if(pass.value!=pass2.value){
             ppass2.className="warning";
-            error[3]='password-confirm';
+            error[3]='Password-confirm';
         }else{
-            error[3]='';
+            error[3]=null;
         }
     });
     pass2.addEventListener('focus',function(){
@@ -101,9 +102,9 @@ function validateAge(){
         var page=document.getElementById('page');
         if(parseInt(age.value)<18){
             page.className="warning";
-            error[4]='age';
+            error[4]='Age';
         }else{
-            error[4]='';
+            error[4]=null;
         }
     });
     age.addEventListener('focus',function(){
@@ -115,9 +116,9 @@ function validatePhone(){
         var pphone=document.getElementById('pphone');
         if(parseInt(phone.value.length)<7){
             pphone.className="warning";
-            error[5]='phone number';
+            error[5]='Phone number';
         }else{
-            error[5]='';
+            error[5]=null;
         }
     });
     phone.addEventListener('focus',function(){
@@ -128,53 +129,53 @@ function validatePhone(){
 function validateAddress(){//FALTA CORREGIR EXPRESION
     address.addEventListener('blur',function(){
         var paddress=document.getElementById('paddress');
-        if(!expresiones.nombre.test(address.value)){
+        if(!expresiones.direccion.test(address.value)){
             paddress.className="warning";
-            error[6]='address';
+            error[6]='Address';
         }else{
-            error[6]='';
+            error[6]=null;
         }
     });
     address.addEventListener('focus',function(){
         paddress.className="warning2";
     })
 }
-function validateCity(){//FALTA CORREGIR EXPRESION
+function validateCity(){
     city.addEventListener('blur',function(){
         var pcity=document.getElementById('pcity');
         if(!expresiones.nombre.test(city.value)){
             pcity.className="warning";
-            error[7]='city';
+            error[7]='City';
         }else{
-            error[7]='';
+            error[7]=null;
         }
     });
     city.addEventListener('focus',function(){
         pcity.className="warning2";
     })
 }
-function validatePostalCode(){//FALTA CORREGIR EXPRESION
+function validatePostalCode(){
     pc.addEventListener('blur',function(){
         var ppc=document.getElementById('ppc');
-        if(!expresiones.nombre.test(pc.value)){
+        if(!expresiones.cp.test(pc.value)){
             ppc.className="warning";
-            error[8]='postal code';
+            error[8]='Postal code';
         }else{
-            error[8]='';
+            error[8]=null;
         }
     });
     pc.addEventListener('focus',function(){
         ppc.className="warning2";
     })
 }
-function validateID(){//FALTA CORREGIR EXPRESION
+function validateID(){
     nid.addEventListener('blur',function(){
         var pnid=document.getElementById('pnid');
-        if(!expresiones.nombre.test(nid.value)){
+        if(!expresiones.id.test(nid.value)){
             pnid.className="warning";
-            error[9]='id';
+            error[9]='ID Number';
         }else{
-            error[9]='';
+            error[9]=null;
         }
     });
     nid.addEventListener('focus',function(){
@@ -182,17 +183,17 @@ function validateID(){//FALTA CORREGIR EXPRESION
     })
 }
 function buttonClick(e){
-    var contador=0;
     e.preventDefault();
     var msg="";
+    var contador=0;
     for(var i=0; i<error.length;i++){
-        if(error[i]!=""){
+        if(error[i]!=null){
             contador++
-            alert('El campo ' + error[i] +
-            ' necesita ser completado correctamente para enviar el formulario.');
+            alert('Field ' + error[i] +
+            ' must be completed .');
         }
     }
-    if(contador==0){
+    if((fieldsValidate())){
         msg='Name: '+ name.value;
         msg=msg+', Email: '+email.value;
         msg=msg+', Password: '+password.value;
@@ -203,10 +204,33 @@ function buttonClick(e){
         msg=msg+', Postal Code'+pc.value;
         msg=msg+', ID Number: '+nid.value;
         confirm(msg);
+    }else{
+        alert('All fields must be completed.');
     }
 }
 
 function realTimeKey(){
     var text=name.value;
     document.getElementById('keydown').innerHTML='HOLA '+text.toUpperCase();
+}
+
+function fieldsValidate(){
+    var result=true;
+    if(
+        name.vale==""||
+        email.value==""||
+        password.value==""||
+        password2.value==""||
+        age.value==""||
+        phone.value==""||
+        address.value==""||
+        city.value==""||
+        pc.value==""||
+        nid.value==""
+    ){
+        result=false;
+    }else{
+        result=true;
+    }
+    return result;
 }
