@@ -1,0 +1,41 @@
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+    margin: auto;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+#flex1{
+    margin-top: 10px;
+}
+.grupo{
+    margin-bottom: 10px;
+}
+
+.warning{
+    display: block;
+    color: red;
+    font-size: 0.6rem;
+    margin: 0;
+}
+.warning2{
+    display: none;
+}
+#buttn{
+    margin-top: 10px;
+    color: black;
+    background: transparent;
+    border: 2px solid black;
+    border-radius: 70px;
+    text-decoration: none;
+    text-transform: uppercase;
+}

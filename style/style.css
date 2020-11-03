@@ -27,10 +27,17 @@
         border: none;
         padding:0 10px;
     }
+    .form{
+        flex-direction: row;
+        width: 100%;
+    }
+    #flex1,#flex2{
+        margin: 0px 50px;
+    }
 
 }
 @media (min-width: 900px) {
-    main, header{
+    main, header,form{
         max-width: 2048px;
         margin: auto;
     }
@@ -51,6 +58,10 @@
         flex:6;
         order:1;
         margin: 1%;
+    }
+    form .subContain{
+        flex-direction: row;
+        margin: auto;
     }
 }
 

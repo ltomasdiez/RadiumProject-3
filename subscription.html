@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style/reset.css">
+    <link rel="stylesheet" href="./style/global.css">
+    <link rel="stylesheet" href="./style/header.css">
+    <link rel="stylesheet" href="./style/subscription.css">
+    <link rel="stylesheet" href="./style/footer.css">
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+    <header id="landing">
+        <!-- HEADER AREA -->
+        <div id="landing-header">
+            <div id="landing-text-inner">
+                <a href="./index.html"><h1>Radium News</h1></a>
+                <h2>Keep on Top World News</h2>
+            </div>
+            <button id="landing-button"></button>
+        </div>
+        <nav id="landing-nav">
+            <div id="menu">
+                <ul class="container-ul">
+                    <li class="box">
+                        <a href="">World</a>
+                    </li>
+                    <li class="box">
+                        <a href="">Politik</a>
+                    </li>
+                    <li class="box">
+                        <a href="">Economy</a>
+                    </li>
+                    <li class="box">
+                        <a href="">Tecnology</a>
+                    </li>
+                    <li class="box">
+                        <a
+                            href="../subscription.html"
+                            style="color: black;"
+                        >Suscribe</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- SUSCRIBE FORM -->
+    <main>
+        <div class="main">
+            <h1>Registro</h1>
+            <p id="keydown">HOLA</p>
+        </div>
+        <div class="main">
+            <form action="">
+                <div class="form">
+                    <div id="flex1">
+                        <!-- NAME -->
+                        <div class="grupo">
+                            <input type="text" id="name" placeholder="Name">
+                            <!-- <label for="">Name</label> -->
+                            <p id="pname" class="warning2">Letras y espacios en este campo.</p>
+                        </div>
+                        <!-- Email -->
+                        <div class="grupo">
+                            <input type="email" id="email" placeholder="Email">
+                            <!-- <label for="">Email</label> -->
+                            <p id="pemail" class="warning2">Debe ingresar un correo electronico valido.</p>
+                        </div>
+                        <!-- Password -->
+                        <div class="grupo">
+                            <input type="password" id="password" placeholder="Password">
+                            <!-- <label for="">Password</label> -->
+                            <p id="ppass" class="warning2">La password debe ser de al menos 8 caracteres, formados por letras y números..</p>
+                        </div>
+                        <!-- Confirm Password -->
+                        <div class="grupo">
+                            <input type="password" id="password2" placeholder="Confirm Password">
+                            <!-- <label for="">Re-Password</label> -->
+                            <p id="ppass2" class="warning2">La password no coincide</p>
+                        </div>
+                        <!-- Age -->
+                        <div class="grupo">
+                            <input type="text" id="age" placeholder="AGE">
+                            <!-- <label for="">Age</label> -->
+                            <p id="page" class="warning2">Debe ser mayor de 18 años.</p>
+                        </div>
+                    </div>
+                    <div id="flex2">
+                        <!-- Phone Number -->
+                        <div class="grupo">
+                            <input type="text" id="phone" placeholder="Phone Number">
+                            <!-- <label for="">Phone Number</label> -->
+                            <p id="pphone" class="warning2">Su numero debe contener al menos 7 digitos</p>
+                        </div>
+                        <!-- Address -->
+                        <div class="grupo">
+                            <input type="text" id="address" placeholder="Address">
+                            <!-- <label for="">Address</label> -->
+                            <p id="paddress" class="warning2">Este campo debe contener al menos 5 caracteres y 1 numero.</p>
+                        </div>
+                        <!-- City -->
+                        <div class="grupo">
+                            <input type="text" id="city" placeholder="City">
+                            <!-- <label for="">City</label> -->
+                            <p id="pcity" class="warning2">Este campo debe contener al menos 3 caracteres</p>
+                        </div>
+                        <!-- Postal Code-->
+                        <div class="grupo">
+                            <input type="text" id="pc" placeholder="Postal Code">
+                            <!-- <label for="">Postal Code</label> -->
+                            <p id="ppc" class="warning2">Este campo debe contener al menos 3 caracteres.</p>
+                        </div>
+                        <!-- NID -->
+                        <div class="grupo">
+                            <input type="text" id="nid" placeholder="ID Number">
+                            <!-- <label for="">ID</label> -->
+                            <p id="pnid" class="warning2">Este campo debe contener 7 u 8 digitos</p>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="main">
+            <button type="submit" id="buttn">Suscribe</button>
+        </div>
+    </main>
+    <footer>
+        <h3>Radium's Students Web Design &copy; 2020</h3>
+        <p>Email or call us to set up a consult</p>
+        <p>Email: <strong>ltomasdiez@gmail.com</strong></p>
+        <p>+54 (444) 555-5555</p>
+    </footer>
+    <script src="./javascript/index.js"></script>
+</body>
+</html>
