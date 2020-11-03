@@ -42,6 +42,7 @@ window.onload=function(){
 
     //Functions
     function validateName(){//FALTA CORREGIR EXPRESION
+        var result=false;
         name.addEventListener('blur',function(){
             var pname=document.getElementById('pname');
             if(!expresiones.nombre.test(name.value)){
@@ -50,13 +51,16 @@ window.onload=function(){
             }else{
                 error[0]=null;
                 realTimeKey(); //FIXING KEYDOWN EVENT
+                result=true;
             }
         });
         name.addEventListener('focus',function(){
             pname.className="warning2";
         })
+        return result;
     }
     function validateEmail(){
+        var result=false;
         email.addEventListener('blur',function(){
             var pemail=document.getElementById('pemail');
             if(!expresiones.correo.test(email.value)){
@@ -64,13 +68,16 @@ window.onload=function(){
                 error[1]='Email';
             }else{
                 error[1]=null;
+                result=true;
             }
         });
         email.addEventListener('focus',function(){
             pemail.className="warning2";
         })
+        return result;
     }
     function validatePassword(){
+        var result=false;
         pass.addEventListener('blur',function(){
             var ppass=document.getElementById('ppass');
             if(!expresiones.password.test(pass.value)){
@@ -78,13 +85,16 @@ window.onload=function(){
                 error[2]='Password';
             }else{
                 error[2]=null;
+                result=true;
             }
         });
         pass.addEventListener('focus',function(){
             ppass.className="warning2";
         })
+        return result;
     }
     function validatePassword2(){
+        var result=false;
         pass2.addEventListener('blur',function(){
             var ppass2=document.getElementById('ppass2');
             if(pass.value!=pass2.value){
@@ -92,13 +102,16 @@ window.onload=function(){
                 error[3]='Password-confirm';
             }else{
                 error[3]=null;
+                result=true;
             }
         });
         pass2.addEventListener('focus',function(){
             ppass2.className="warning2";
         })
+        return result;
     }
     function validateAge(){
+        var result=false;
         age.addEventListener('blur',function(){
             var page=document.getElementById('page');
             if(parseInt(age.value)<18){
@@ -106,13 +119,16 @@ window.onload=function(){
                 error[4]='Age';
             }else{
                 error[4]=null;
+                result=true;
             }
         });
         age.addEventListener('focus',function(){
             page.className="warning2";
         })
+        return result;
     }
     function validatePhone(){
+        var result=false;
         phone.addEventListener('blur',function(){
             var pphone=document.getElementById('pphone');
             if(parseInt(phone.value.length)<7){
@@ -120,13 +136,16 @@ window.onload=function(){
                 error[5]='Phone number';
             }else{
                 error[5]=null;
+                result=true;
             }
         });
         phone.addEventListener('focus',function(){
             pphone.className="warning2";
         })
+        return result;
     }
     function validateAddress(){//FALTA CORREGIR EXPRESION
+        var result=false;
         address.addEventListener('blur',function(){
             var paddress=document.getElementById('paddress');
             if(!expresiones.direccion.test(address.value)){
@@ -134,13 +153,16 @@ window.onload=function(){
                 error[6]='Address';
             }else{
                 error[6]=null;
+                result=true;
             }
         });
         address.addEventListener('focus',function(){
             paddress.className="warning2";
         })
+        return result;
     }
     function validateCity(){
+        var result=false;
         city.addEventListener('blur',function(){
             var pcity=document.getElementById('pcity');
             if(!expresiones.nombre.test(city.value)){
@@ -148,13 +170,16 @@ window.onload=function(){
                 error[7]='City';
             }else{
                 error[7]=null;
+                result=true;
             }
         });
         city.addEventListener('focus',function(){
             pcity.className="warning2";
         })
+        return result;
     }
     function validatePostalCode(){
+        var result=false;
         pc.addEventListener('blur',function(){
             var ppc=document.getElementById('ppc');
             if(!expresiones.cp.test(pc.value)){
@@ -162,13 +187,16 @@ window.onload=function(){
                 error[8]='Postal code';
             }else{
                 error[8]=null;
+                result=true;
             }
         });
         pc.addEventListener('focus',function(){
             ppc.className="warning2";
         })
+        return result;
     }
     function validateID(){
+        var result=false;
         nid.addEventListener('blur',function(){
             var pnid=document.getElementById('pnid');
             if(!expresiones.id.test(nid.value)){
@@ -176,11 +204,13 @@ window.onload=function(){
                 error[9]='ID Number';
             }else{
                 error[9]=null;
+                result=true;
             }
         });
         nid.addEventListener('focus',function(){
             pnid.className="warning2";
         })
+        return result;
     }
     function buttonClick(e){
         e.preventDefault();
@@ -215,16 +245,16 @@ window.onload=function(){
     function fieldsValidate(){
         var result=true;
         if(
-            name.vale==""||
-            email.value==""||
-            password.value==""||
-            password2.value==""||
-            age.value==""||
-            phone.value==""||
-            address.value==""||
-            city.value==""||
-            pc.value==""||
-            nid.value==""
+            !validateName()||
+            !validateEmail()||
+            !validatePassword()||
+            !validatePassword2()||
+            !validateAge()||
+            !validateAddress()||
+            !validateCity()||
+            !validatePhone()||
+            !validatePostalCode()||
+            !validateID()
         ){
             result=false;
         }else{
