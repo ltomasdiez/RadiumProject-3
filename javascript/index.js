@@ -240,7 +240,7 @@ window.onload=function(){
     }
     function realTimeKey(){
         var text=name.value;
-        document.getElementById('keydown').innerHTML='HOLA '+text.toUpperCase();
+        document.getElementById('keydown').innerHTML='HI, '+text.toUpperCase()+' !';
     }
     function fieldsValidate(){
         var result=true;
